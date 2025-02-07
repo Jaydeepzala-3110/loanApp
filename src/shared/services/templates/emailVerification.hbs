@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Template</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f0f8ff;
+        /* Light bluish background */
+        font-family: Arial, sans-serif;
+      }
+
+      .email-wrapper {
+        width: 100%;
+        padding: 30px 20px;
+        /* Padding around the entire white box */
+        background-color: #f0f8ff;
+        box-sizing: border-box;
+        /* Ensure padding does not exceed container width */
+      }
+
+      .email-container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        /* White box background */
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        /* Inner padding inside the white box */
+        box-sizing: border-box;
+        /* Maintain consistent sizing with padding */
+      }
+
+      .email-header {
+        text-align: center;
+        padding-bottom: 10px;
+        /* Space below the logo */
+      }
+
+      .email-header img {
+        max-width: 150px;
+        height: auto;
+      }
+
+      .email-title {
+        font-size: 22px;
+        color: #333333;
+        margin: 20px 0 10px;
+        text-align: center;
+      }
+
+      .email-body {
+        font-size: 16px;
+        color: #555555;
+        line-height: 1.6;
+      }
+
+      .otp-box {
+        background-color: #f0f0f0;
+        padding: 20px;
+        text-align: center;
+        border-radius: 8px;
+        margin: 20px 0;
+      }
+
+      .otp-code {
+        font-size: 45px;
+        font-weight: 600;
+        color: #333333;
+        margin: 0;
+        letter-spacing: 5px;
+      }
+
+      .email-footer {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 12px;
+        color: #aaaaaa;
+        padding-top: 15px;
+        border-top: 1px solid #eeeeee;
+        /* Subtle separator for footer */
+      }
+
+      a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .email-container {
+          width: 100%;
+        }
+
+        .otp-code {
+          font-size: 40px;
+          letter-spacing: 5px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="email-wrapper">
+      <!-- Email Container -->
+      <div class="email-container">
+        <!-- Header -->
+        <div class="email-header" style="padding-left: 30px">
+          <img
+            src="https://dev-customer.stayfinance.com.au/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.78829736.png&w=384&q=75"
+            alt="Logo"
+          />
+        </div>
+
+        <!-- Title Section -->
+
+        <div class="email-body">
+          <h1 class="email-title">Your Stay Finance confirmation code</h1>
+          <p>Hi <strong>{{name}}</strong>,</p>
+          <p>
+            For your security, we have created a one-time password (OTP) for
+            your account.
+          </p>
+
+          <!-- OTP Box -->
+          <div class="otp-box">
+            <p class="otp-code">{{otp}}</p>
+          </div>
+
+          <p><strong>Note:</strong> Code remains valid for 10 minutes only.</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="email-footer">
+          <p>
+            If you have any questions, feel free to contact us at
+            <a href="mailto:info@stayfinance.com.au">info@stayfinance.com.au</a
+            >.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

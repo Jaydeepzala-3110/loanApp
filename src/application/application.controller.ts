@@ -19,6 +19,8 @@ import { Application } from './entities/application.entity';
 import { AuthGuard } from 'src/comman/guards/auth.guard';
 import { query, Request } from 'express';
 import { ApplicationQueryDto } from './dto/filter-application.dto';
+import { UserRole } from 'src/utils/enum.utils';
+import { Roles } from 'src/comman/decorators/roles.decorator';
 
 @Controller('application')
 export class ApplicationController {
@@ -35,16 +37,15 @@ export class ApplicationController {
   }
 
   @Get()
+  @Roles(UserRole.Admin, UserRole.Customer)
   findAll(@Query() query: ApplicationQueryDto) {
     return this.applicationService.listApplications(query);
   }
 
   @Get('/filter')
+  @Roles(UserRole.Admin, UserRole.Customer)
   async filter(@Query() query: ApplicationQueryDto) {
-    console.log(query);
-
     const response = await this.applicationService.listApplications(query);
-    console.log(response);
     return response;
   }
 }

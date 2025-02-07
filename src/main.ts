@@ -12,8 +12,6 @@ async function bootstrap() {
       });
   }
 
-  // console.log('db is connected');
-
   const app = await NestFactory.create(AppModule);
 
   app.setGlobalPrefix('api');

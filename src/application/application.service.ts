@@ -211,7 +211,6 @@ export class ApplicationService {
       const applications = await qb.getMany();
       return applications;
     } catch (error) {
-      console.log('Error in listApplications:', error);
       throw error;
     }
   }

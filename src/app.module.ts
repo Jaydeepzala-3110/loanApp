@@ -13,6 +13,7 @@ import { MailModule } from './shared/services/mail/mail.module';
 import { OtpModule } from './otp/otp.module';
 import { ConfigService } from './shared/services/config.service';
 import { JwtService } from '@nestjs/jwt';
+import { NoteModule } from './note/note.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { JwtService } from '@nestjs/jwt';
     AuthModule,
     MailModule,
     OtpModule,
+    NoteModule,
   ],
   controllers: [AppController],
   providers: [AppService, ConfigService, JwtService],
